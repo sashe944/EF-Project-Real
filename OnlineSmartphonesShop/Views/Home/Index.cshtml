@@ -2,30 +2,222 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!-- HOME -->
+<section id="home" class="padbot0">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <!-- TOP SLIDER -->
+    <div class="flexslider top_slider">
+        <ul class="slides">
+            <li class="slide1">
+                <div class="flex_caption1">
+                    <p class="title1 captionDelay2 FromTop">Advanced<br /></p>
+                    <p class="title2 captionDelay4 FromTop">10nm <br /></p>
+                    <p class="title3 captionDelay6 FromTop">processor.</p>
+                    <p class="title4 captionDelay7 FromBottom">It's in the world's first Galaxy S8</p>
+                </div>
+                <a class="slide_btn FromRight" href="javascript:void(0);">Read More</a>
+            <li class="slide2">
+                <div class="flex_caption1">
+                    <p class="title1 captionDelay6 FromLeft">LG Smart World</p>
+                    <p class="title2 captionDelay4 FromLeft"></p>
+                    <p class="title3 captionDelay2 FromLeft"></p>
+                    <p class="title4 captionDelay7 FromLeft">Receive 300 Applications optimized for the LG G6’s Aspect Ratio</p>
+                </div>
+                <a class="slide_btn FromRight" href="javascript:void(0);">Read More</a>
+            </li>
+            <li class="slide3">
+                <div class="flex_caption1">
+                    <p class="title1 captionDelay1 FromBottom">Samsung Galaxy S8 or LG G6 ?</p>
+                    <p class="title2 captionDelay2 FromBottom"></p>
+                    <p class="title3 captionDelay3 FromBottom"></p>
+                    <p class="title4 captionDelay5 FromBottom">Variety of Benchmark tests </p>
+                </div>
+                <a class="slide_btn FromRight" href="javascript:void(0);">Read More</a>
+
+            </li>
+        </ul>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    <div id="carousel">
+        <ul class="slides">
+            <li><img src="@Url.Content("~/Content/")images/slider/slide1_bg.jpg" alt="" /></li>
+            <li><img src="@Url.Content("~/Content/")images/slider/slide2_bg.jpg" alt="" /></li>
+            <li><img src="@Url.Content("~/Content/")images/slider/slide3_bg.jpg" alt="" /></li>
+        </ul>
+    </div><!-- //TOP SLIDER -->
+</section><!-- //HOME -->
+<!-- ABOUT -->
+<section id="about">
+
+    <!-- SERVICES -->
+    <div class="services_block padbot40" data-appear-top-offset="-200" data-animated="fadeInUp">
+
+
+
+        <!-- CLEAN CODE -->
+        <div class="cleancode_block">
+
+            <!-- CONTAINER -->
+            <div class="container" data-appear-top-offset="-200" data-animated="fadeInUp">
+
+                <!-- CASTOM TAB -->
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active clearfix" id="tab1">
+                        <p class="title"><b>Android</b> Operation System</p>
+                        <span>
+                            Android is used mostly for every Smart Phone!
+                            Highly Maintainable and easy to use Operating System.
+                        </span>
+                    </div>
+                    <div class="tab-pane fade clearfix" id="tab2">
+                        <p class="title"><b>Technical</b> Support</p>
+                        <span>There are many forums and support for android operation system.</span>
+                    </div>
+
+                </div>
+                <div class="row-fluid">
+                    <div class="col-sm-12">
+                        <div class="col-sm-6 col-sm-offset-4">
+                            <ul id="myTab" class="nav nav-tabs">
+                                <li class="active"><a class="i1" href="#tab1" data-toggle="tab"><i></i><span>Android Operation System</span></a></li>
+                                <li><a class="i2" href="#tab2" data-toggle="tab"><i></i><span>Support</span></a></li>
+                            </ul><!-- CASTOM TAB -->
+                        </div>
+                    </div>
+                </div>
+            </div><!-- //CONTAINER -->
+        </div><!-- //CLEAN CODE -->
+        <!-- MULTI PURPOSE -->
+        <div class="purpose_block">
+
+            <!-- CONTAINER -->
+            <div class="container">
+
+                <!-- ROW -->
+                <div class="row">
+
+                    <div class="col-lg-7 col-md-7 col-sm-7" data-appear-top-offset="-200" data-animated="fadeInLeft">
+                        <h2><b>HTC One</b> M7</h2>
+                        <p>
+                            Available storage is less due to phone software.
+                            Network bands in regions may be different, depending on the mobile operator and your location. 4G LTE only available in select countries. Upload and download speeds also depend on the mobile operator.
+                            Battery times (talk time, standby time, and more) are subject to network and phone usage.
+
+                            A Standby time specification ("specification") is an industry standard that is only intended to allow comparison of different mobile devices under the same circumstances. Power consumption in a standby state is strongly dependent on factors including but not limited to network, settings, location, movement, signal strength and cell traffic .
+                            Comparisons of different mobile devices using such a specification can therefore only be done in a controlled laboratory environment . When using any mobile device in real life circumstances for which the mobile device is intended, the standby time could be considerably lower and will be strongly dependent on the factors as mentioned above.
+                        </p>
+                        <p>
+                            Total storage : 32GB/64GB, available capacity varies
+
+                            RAM : 2 GB DDR2
+
+                            Sensors
+                            Gyro sensor
+                            Accelerometer
+                            Proximity sensor
+                            Ambient light sensor
+
+                            Camera
+                            HTC UltraPixel Camera
+                            BSI sensor, Pixel size 2.0 µm, Sensor size 1/3'
+                            Dedicated HTC ImageChip 2
+                            F2.0 aperture and 28 mm lens
+                            Smart Flash: Five levels of flash automatically set by distance to subject
+                            Optical Image Stabilization (OIS)
+                            Front Camera: 2.1 MP, 880 wide angle lens with HDR capability
+                            1080p Full HD video recording with HDR Video
+                            HTC Zoe™ with Sequence Shot, Always Smile and Object Removal
+                            Gallery with Video Highlights and HTC Share
+                            Continuous shooting and VideoPic
+                            Slow motion video recording with variable speed playback
+                            AC Adaptor
+                            Voltage range/frequency: 100 ~ 240 V AC, 50/60 Hz
+
+                            DC output: 5 V and 1 A
+
+                            Weight
+                            143g
+                            Platform Android
+                            Android™ with HTC Sense™
+
+                            HTC BlinkFeed™
+
+                            Network2
+                            2G/2.5G - GSM/GPRS/EDGE:
+                            850/900/1800/1900 MHz
+                            3G - UMTS/ HSPA:
+                            Europe/ Middle East/ Africa: 900/1900/2100 MHz with HSPA+ up to 42 Mbps
+                            Asia: 850/900/1900/2100 MHz with HSPA+ up to 42 Mbps
+                            Canada/ Latin America: 850/1900/2100 MHz up to HSPA+ 42 Mbps
+                            T-Mobile (US): 850/ AWS/1900/2100 MHz with HSPA+ up to 42 Mbps
+                            AT&T: 850/1900/2100 MHz with HSPA+ up to 21 Mbps
+                            Sprint: 1900/2100 MHz with HSPA+ up to 14.4 Mbps
+                            3G - CDMA:
+                            800/1900 MHz for Sprint
+                            4G - CDMA:
+                            Verizon: 800/1900MHZ, UMTS/HSPA 900/2100MHz,GSM/GPRS/EDGE 850/900/1800/1900MHz, LTE 700MHz (Band 13)
+                            4G - LTE:
+                            Europe/ Middle East/ Africa: 800/1800/2600 MHz
+                            Asia: 1800/2600 MHz
+                            T-Mobile (US)/ AT&T/ Canada/ Latin America: 700 MHz and AWS band
+                            Sprint: 1900 MHz
+                            Connectivity
+                            3.5 mm stereo audio jack
+                        </p>
+                        <a style="padding: 20px;"class="btn btn-active" href="javascript:void(0);"><span data-hover="Yes I want it">Byu This Smart Phone</span></a>
+                    </div>
+
+                    <div class="col-lg-5 col-md-5 col-sm-5 ipad_img_in" data-appear-top-offset="-200" data-animated="fadeInRight">
+                        <img class="ipad_img1" src="@Url.Content("~/Content/")images/img2.png" alt="" />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <img class="ipad_img1" src="@Url.Content("~/Content/")images/img1.png" alt="" />
+                    </div>
+                </div><!-- //ROW -->
+            </div><!-- //CONTAINER -->
+        </div><!-- //MULTI PURPOSE -->
+</section><!-- //ABOUT -->
+<!-- NEWS -->
+<section id="news">
+
+    <!-- CONTAINER -->
+    <div class="container">
+        <h2><b>Clients</b> say about us</h2>
+
+        <!-- TESTIMONIALS -->
+        <div class="testimonials" data-appear-top-offset="-200" data-animated="fadeInUp">
+
+            <!-- TESTIMONIALS SLIDER -->
+            <div class="owl-demo owl-carousel testim_slider">
+
+                <!-- TESTIMONIAL1 -->
+                <div class="item">
+                    <div class="testim_content">“S8 has cool design and it is very easy to use. Without a doubt it is the best phone for 2017”</div>
+                    <div class="testim_author">— Alexander Indzhov, <b>Student</b></div>
+                </div><!-- TESTIMONIAL1 -->
+                <!-- TESTIMONIAL2 -->
+                <div class="item">
+                    <div class="testim_content">“LG G6 is just awesome.His design is better than G5 and Android OS is very easy to use on this phone.”</div>
+                    <div class="testim_author">—  Belgin Siracov, <b>Student</b></div>
+                </div><!-- TESTIMONIAL2 -->
+                <!-- TESTIMONIAL3 -->
+                <div class="item">
+                    <div class="testim_content">“HTC One otherwise known also as M7 is very beautiful phone with high quality sound.”</div>
+                    <div class="testim_author">—  Alexander Indzhov, <b>Student</b></div>
+                </div><!-- TESTIMONIAL3 -->
+            </div><!-- TESTIMONIALS SLIDER -->
+        </div><!-- //TESTIMONIALS -->
+    </div><!-- //CONTAINER -->
+</section><!-- //NEWS -->
+	</div><!-- //PAGE -->
+<!-- CONTACTS -->
+<section id="contacts"></section><!-- //CONTACTS -->

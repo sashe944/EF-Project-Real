@@ -164,30 +164,35 @@ select,
 textarea {
   margin: 0;
   font-family: inherit;
+  padding:15px;
   font-size: 100%;
 }
 
 button,
 input {
   line-height: normal;
+  padding: 15px;
 }
 
 button,
 select {
-  text-transform: none;
+    text-transform: none;
+    padding: 15px;
 }
 
 button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  cursor: pointer;
-  -webkit-appearance: button;
+    cursor: pointer;
+    -webkit-appearance: button;
+    padding: 15px;
 }
 
 button[disabled],
 html input[disabled] {
   cursor: default;
+  padding:15px;
 }
 
 input[type="checkbox"],
