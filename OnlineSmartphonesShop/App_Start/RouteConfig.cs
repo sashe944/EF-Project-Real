@@ -18,6 +18,11 @@ namespace OnlineSmartphonesShop
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+               name: "BuyOrSellSmartPhone",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "BuyOrSellSmartPhone", action = "Buy", id = UrlParameter.Optional }
+           );
         }
     }
 }
