@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------------*/
+﻿/*-----------------------------------------------------------------------------------*/
 /*	GENERAL STYLING
 /*-----------------------------------------------------------------------------------*/
 ::selection {background: #000; color:#fff;}
@@ -293,10 +293,13 @@ header {
 	color:#666;
 	transition: all 0.3s ease-in-out; 
 	-webkit-transition: all 0.3s ease-in-out;
+        text-decoration:none;
 }
 .navmenu li:hover a,
 .navmenu li.active a {
 	color:#333;
+
+ 
 }
 
 /* Sub menu */
