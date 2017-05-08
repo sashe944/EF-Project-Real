@@ -195,11 +195,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705021407598_InitializeLocalDB.cs" />
-    <Compile Include="Migrations\201705021407598_InitializeLocalDB.Designer.cs">
-      <DependentUpon>201705021407598_InitializeLocalDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels\RegisterViewModel.cs" />
     <Compile Include="Models\AccountViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="Models\AccountViewModels\ExternalLoginListViewModel.cs" />
@@ -217,8 +212,6 @@
     <Compile Include="Models\ManageViewModels\ManageLoginsViewModel.cs" />
     <Compile Include="Models\ManageViewModels\SetPasswordViewModel.cs" />
     <Compile Include="Models\ManageViewModels\VerifyPhoneNumberViewModel.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -375,9 +368,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705021407598_InitializeLocalDB.resx">
-      <DependentUpon>201705021407598_InitializeLocalDB.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\OnlineSmartPhoneShop_DbContext\OnlineSmartPhoneShop_DbContext.csproj">
+      <Project>{17A9A76D-67F9-4826-A591-08B0C26F978E}</Project>
+      <Name>OnlineSmartPhoneShop_DbContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineSmartPhoneShop_Entities\OnlineSmartPhoneShop_Entities.csproj">
+      <Project>{035f5924-7bcd-41b6-be4a-102908c3a1ec}</Project>
+      <Name>OnlineSmartPhoneShop_Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

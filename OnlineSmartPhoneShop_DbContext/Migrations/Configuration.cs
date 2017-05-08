@@ -1,19 +1,22 @@
-namespace OnlineSmartphonesShop.Migrations
+namespace OnlineSmartPhoneShop_DbContext.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<OnlineSmartphonesShop.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<OnlineSmartPhoneShop_DbContext.ApplicationDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = false;
         }
 
-        protected override void Seed(OnlineSmartphonesShop.Models.ApplicationDbContext context)
+        protected override void Seed(OnlineSmartPhoneShop_DbContext.ApplicationDbContext context)
         {
+            Initializer.SeedRoles(context);
+            Initializer.SeedUser(context);
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
