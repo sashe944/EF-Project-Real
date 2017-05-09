@@ -10,8 +10,7 @@
                 @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-            <li>@Html.ActionLink("Buy Smart Phone", "Buy","BuyOrSell", routeValues: null,htmlAttributes: new { title = "Manage" })</li>
-            <li>@Html.ActionLink("Sell Smart Phone", "Sell","BuyOrSell", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+            <li>@Html.ActionLink("Buy Smart Phone", "Index","BuySmartphones", routeValues: null,htmlAttributes: new { title = "Manage" })</li>
     </ul>
     }
 }

@@ -189,7 +189,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BuyOrSellController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -345,9 +344,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\BuySmartPhone.cshtml" />
-    <Content Include="Views\BuyOrSell\Buy.cshtml" />
-    <Content Include="Views\BuyOrSell\Sell.cshtml" />
+    <Content Include="Views\BuySmartphones\Create.cshtml" />
+    <Content Include="Views\BuySmartphones\Delete.cshtml" />
+    <Content Include="Views\BuySmartphones\Details.cshtml" />
+    <Content Include="Views\BuySmartphones\Edit.cshtml" />
+    <Content Include="Views\BuySmartphones\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

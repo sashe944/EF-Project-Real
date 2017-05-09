@@ -13,10 +13,18 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
             AutomaticMigrationDataLossAllowed = false;
         }
 
-        protected override void Seed(OnlineSmartPhoneShop_DbContext.ApplicationDbContext context)
+        protected override void Seed(ApplicationDbContext context)
         {
-            Initializer.SeedRoles(context);
-            Initializer.SeedUser(context);
+            if (!context.Roles.Any())
+            {
+                Initializer.SeedRoles(context);
+            }
+            if (!context.Users.Any())
+            {
+                Initializer.SeedUser(context);
+            }
+          
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

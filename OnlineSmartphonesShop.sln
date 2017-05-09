@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OnlineSmartPhoneDbContext",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSmartPhoneShop_DbContext", "OnlineSmartPhoneShop_DbContext\OnlineSmartPhoneShop_DbContext.csproj", "{17A9A76D-67F9-4826-A591-08B0C26F978E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OnlineSmartPhoneShopCommonFiles", "OnlineSmartPhoneShopCommonFiles", "{0C619A8D-D205-4B2D-BB25-299442276FD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSmartPhoneShop_CommonFiles", "OnlineSmartPhoneShop_CommonFiles\OnlineSmartPhoneShop_CommonFiles.csproj", "{3CD496BB-DABA-4372-AADA-BBDF2DAB4D3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{17A9A76D-67F9-4826-A591-08B0C26F978E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17A9A76D-67F9-4826-A591-08B0C26F978E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17A9A76D-67F9-4826-A591-08B0C26F978E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD496BB-DABA-4372-AADA-BBDF2DAB4D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD496BB-DABA-4372-AADA-BBDF2DAB4D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD496BB-DABA-4372-AADA-BBDF2DAB4D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD496BB-DABA-4372-AADA-BBDF2DAB4D3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,5 +49,6 @@ Global
 		{0A33F0EF-F70C-4599-97D4-B0C05B9A2841} = {553FC815-5FE5-46A4-ABFD-B4905A180D05}
 		{035F5924-7BCD-41B6-BE4A-102908C3A1EC} = {79DC07D1-19CE-46CC-A5A8-030D62DEF1C7}
 		{17A9A76D-67F9-4826-A591-08B0C26F978E} = {C95928C9-5290-4A8F-8E7A-04D22C092ABC}
+		{3CD496BB-DABA-4372-AADA-BBDF2DAB4D3A} = {0C619A8D-D205-4B2D-BB25-299442276FD0}
 	EndGlobalSection
 EndGlobal

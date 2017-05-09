@@ -19,10 +19,11 @@ namespace OnlineSmartphonesShop
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
-               name: "BuyOrSellSmartPhone",
+               name: "BuySmartPhone",
                url: "{controller}/{action}/{id}",
-               defaults: new { controller = "BuyOrSellSmartPhone", action = "Buy", id = UrlParameter.Optional }
+               defaults: new { controller = "BuySmartphones", action = "Edit"}
            );
+           
         }
     }
 }

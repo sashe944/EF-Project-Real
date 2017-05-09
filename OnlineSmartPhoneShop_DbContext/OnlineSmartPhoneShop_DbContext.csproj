@@ -55,6 +55,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Migrations\201705092033546_AddedUserRoles.cs" />
+    <Compile Include="Migrations\201705092033546_AddedUserRoles.Designer.cs">
+      <DependentUpon>201705092033546_AddedUserRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705092038545_AddBasicUserWithRole.cs" />
+    <Compile Include="Migrations\201705092038545_AddBasicUserWithRole.Designer.cs">
+      <DependentUpon>201705092038545_AddBasicUserWithRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Initializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,10 +72,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OnlineSmartPhoneShop_CommonFiles\OnlineSmartPhoneShop_CommonFiles.csproj">
+      <Project>{3CD496BB-DABA-4372-AADA-BBDF2DAB4D3A}</Project>
+      <Name>OnlineSmartPhoneShop_CommonFiles</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OnlineSmartPhoneShop_Entities\OnlineSmartPhoneShop_Entities.csproj">
       <Project>{035F5924-7BCD-41B6-BE4A-102908C3A1EC}</Project>
       <Name>OnlineSmartPhoneShop_Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705092033546_AddedUserRoles.resx">
+      <DependentUpon>201705092033546_AddedUserRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705092038545_AddBasicUserWithRole.resx">
+      <DependentUpon>201705092038545_AddBasicUserWithRole.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

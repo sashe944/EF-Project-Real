@@ -1,0 +1,50 @@
+﻿@model OnlineSmartPhoneShop_Entities.Models.BuySmartphone
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BuySmartphone</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SmartphoneName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SmartphoneName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImgURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImgURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoughtOnDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoughtOnDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
