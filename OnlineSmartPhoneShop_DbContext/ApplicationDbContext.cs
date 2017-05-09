@@ -18,5 +18,6 @@ namespace OnlineSmartPhoneShop_DbContext
             return new ApplicationDbContext();
         }
 
+        public System.Data.Entity.DbSet<OnlineSmartPhoneShop_Entities.Models.BuySmartphone> BuySmartphones { get; set; }
     }
 }
