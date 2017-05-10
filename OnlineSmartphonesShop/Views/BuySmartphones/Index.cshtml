@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<OnlineSmartPhoneShop_Entities.Models.BuySmartphone>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "List of all available smart phones";
 }
 
-<h2>Index</h2>
+<h2>List of all available smart phones</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
         <th>
@@ -40,11 +40,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.BoughtOnDate)
         </td>
-        <td>
+        @*<td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
+        </td>*@
     </tr>
 }
 
