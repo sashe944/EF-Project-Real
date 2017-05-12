@@ -53,8 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\BuySmartphone.cs" />
-    <Compile Include="Models\SellSmartphone.cs" />
+    <Compile Include="Models\Smartphone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\User.cs" />
   </ItemGroup>

@@ -12,10 +12,8 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
         internal static void SeedRoles(ApplicationDbContext context)
         {
             string[] roles =
-            {
-                "Administrator",
-                "Guest"
-                
+           {
+                "Administrator"
             };
 
             foreach (var role in roles)
@@ -29,27 +27,45 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
             }
         }
 
-        internal static void SeedUser(ApplicationDbContext context)
+        internal static void SeedUsers(ApplicationDbContext context)
         {
-            string userName = "Alex";
-            string role = "Owner";
-            var userRole = new IdentityRole { Id = new CustomId().ToString(), Name = role };
-            context.Roles.Add(userRole);
+            string userNameOwner = "Alex";
+            string roleOwner = "Owner";
+            var userRoleOwner = new IdentityRole { Id = new CustomId().ToString(), Name = roleOwner };
+            context.Roles.Add(userRoleOwner);
 
-            var hasher = new PasswordHasher();
+            var ownersPassword = new PasswordHasher();
 
-            var user = new User
+            var owner = new User
             {
-                UserName = userName,
-                PasswordHash = hasher.HashPassword("1"),
+                UserName = userNameOwner,
+                PasswordHash = ownersPassword.HashPassword("1"),
                 Email = "sashe944@abv.bg",
                 EmailConfirmed = true,
                 SecurityStamp = new CustomId().ToString()
             };
 
-            user.Roles.Add(new IdentityUserRole { RoleId = userRole.Id, UserId = user.Id });
-            context.Users.Add(user);
+            owner.Roles.Add(new IdentityUserRole { RoleId = userRoleOwner.Id, UserId = owner.Id });
+            context.Users.Add(owner);
 
+            string userNameGuest = "Belgin";
+            string roleGuest = "Guest";
+            var userRoleGuest = new IdentityRole { Id = new CustomId().ToString(), Name = roleGuest };
+            context.Roles.Add(userRoleGuest);
+
+            var guestsPassword = new PasswordHasher();
+
+            var guest = new User
+            {
+                UserName = userNameGuest,
+                PasswordHash = guestsPassword.HashPassword("1"),
+                Email = "belgin94@abv.bg",
+                EmailConfirmed = true,
+                SecurityStamp = new CustomId().ToString()
+            };
+
+            guest.Roles.Add(new IdentityUserRole { RoleId = userRoleGuest.Id, UserId = guest.Id });
+            context.Users.Add(guest);
         }
     }
 }

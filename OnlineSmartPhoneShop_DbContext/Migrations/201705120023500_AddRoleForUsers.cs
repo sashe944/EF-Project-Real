@@ -3,7 +3,7 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddedUserRoles : DbMigration
+    public partial class AddRoleForUsers : DbMigration
     {
         public override void Up()
         {
@@ -29,6 +29,20 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
+            
+            CreateTable(
+                "dbo.Smartphones",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        Name = c.String(nullable: false),
+                        Price = c.String(nullable: false),
+                        ImgURL = c.String(nullable: false),
+                        Description = c.String(nullable: false),
+                        BoughtOnDate = c.DateTime(nullable: false),
+                        Time = c.Time(nullable: false, precision: 7),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -92,6 +106,7 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
+            DropTable("dbo.Smartphones");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
         }

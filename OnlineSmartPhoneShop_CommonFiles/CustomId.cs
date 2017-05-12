@@ -26,5 +26,9 @@ namespace OnlineSmartPhoneShop_CommonFiles
             return this._id.ToString(format);
         }
 
+        public static implicit operator string(CustomId v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
