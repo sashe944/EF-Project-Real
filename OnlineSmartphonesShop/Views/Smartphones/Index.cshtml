@@ -1,5 +1,5 @@
 ﻿@model PagedList.IPagedList<OnlineSmartPhoneShop_Entities.Models.Smartphone>
-@using PagedList.Mvc; 
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
 }
@@ -9,32 +9,9 @@
 <p>
     @if (User.IsInRole("Owner"))
     {
-       @Html.ActionLink("New Smartphone", "Create")
+        @Html.ActionLink("New Smartphone", "Create")
     }
 </p>
-@*<table class="table">
-    <tr>
-        <th>
-            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
-        </th>
-        <th>
-            Price
-        </th>
-        <th>
-            ImgUrl
-        </th>
-        <th>
-            Description
-        </th>
-        <th>
-            @Html.ActionLink("Date", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
-        </th>
-        <th>
-            Time
-        </th>
-        <th></th>
-    </tr>*@
-
 <div class="row">
     @foreach (var item in Model)
     {
@@ -43,44 +20,41 @@
 
                 @*@Html.DisplayFor(modelItem => item.Name)
 
-            @Html.DisplayFor(modelItem => item.Price)*@
+                    @Html.DisplayFor(modelItem => item.Price)*@
 
                 <img src="@item.ImgURL" alt="Smartphone image" style="width:40%; text-align:center;" />
                 <div class="caption">
                     <h4>
                         @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
-                    : @Html.DisplayFor(modelItem => item.Name) <br />
+                        : @Html.DisplayFor(modelItem => item.Name) <br />
                         Price: @Html.DisplayFor(modelItem => item.Price) <br />
                         @*Description: @Html.DisplayFor(modelItem => item.Description)*@
                         @Html.ActionLink("Date", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
                         :@Html.DisplayFor(modelItem => item.BoughtOnDate)<br />
-                </h4>
-                    <span> 
+                    </h4>
+                    <span>
                     </span>
                     <br />
-                <span class="btn btn-default" role="button">
-                    @Html.ActionLink("Details ", "Details", new { id = item.Id })
-                </span>
-
-                @*@Html.DisplayFor(modelItem => item.BoughtOnDate)
-
-            @Html.DisplayFor(modelItem => item.Time)*@
+                    <span class="btn btn-default" role="button" style="width:100%;">
+                      @if (User.IsInRole("Owner"))
+                      {
+                         @Html.ActionLink("Details | ", "Details", new { id = item.Id })
+                         @Html.ActionLink("Edit | ", "Edit", new { id = item.Id })
+                         @Html.ActionLink("Delete ", "Delete", new { id = item.Id })
+                      }
+                        @if (User.IsInRole("Guest"))
+                        {
+                            @Html.ActionLink("Details | ", "Details", new { id = item.Id })
+                            @Html.ActionLink("Buy ", "", "BuySmartphones")
+                        }
+                       
+                    </span>
+                </div> 
             </div>
-
-            @if (User.IsInRole("Owner"))
-                {
-                @Html.ActionLink("Edit ", "Edit", new { id = item.Id })
-                @Html.ActionLink("Delete ", "Delete", new { id = item.Id })
-            }
-            @if (User.IsInRole("Guest"))
-                {
-                @Html.ActionLink("Buy ", "", "BuySmartphones")
-            }
-           </div>
         </div>
     }
- </div>
-    <br />
+</div>
+<br />
     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of
     @Model.PageCount
 
@@ -92,3 +66,5 @@
         currentFilter =
     ViewBag.CurrentFilter
     }))
+
+

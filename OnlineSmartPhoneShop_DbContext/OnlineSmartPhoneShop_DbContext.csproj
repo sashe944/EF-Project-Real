@@ -61,13 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201705120023500_AddRoleForUsers.cs" />
-    <Compile Include="Migrations\201705120023500_AddRoleForUsers.Designer.cs">
-      <DependentUpon>201705120023500_AddRoleForUsers.cs</DependentUpon>
+    <Compile Include="Migrations\201705142010494_AddedUserRoles.cs" />
+    <Compile Include="Migrations\201705142010494_AddedUserRoles.Designer.cs">
+      <DependentUpon>201705142010494_AddedUserRoles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705120027524_AddedBasicRolesForUserForTestingPurposes.cs" />
-    <Compile Include="Migrations\201705120027524_AddedBasicRolesForUserForTestingPurposes.Designer.cs">
-      <DependentUpon>201705120027524_AddedBasicRolesForUserForTestingPurposes.cs</DependentUpon>
+    <Compile Include="Migrations\201705142012370_AddedUsersWithRolesForTsting.cs" />
+    <Compile Include="Migrations\201705142012370_AddedUsersWithRolesForTsting.Designer.cs">
+      <DependentUpon>201705142012370_AddedUsersWithRolesForTsting.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Initializer.cs" />
@@ -88,15 +88,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705120023500_AddRoleForUsers.resx">
-      <DependentUpon>201705120023500_AddRoleForUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705120027524_AddedBasicRolesForUserForTestingPurposes.resx">
-      <DependentUpon>201705120027524_AddedBasicRolesForUserForTestingPurposes.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="Content\PagedList.css" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\PagedList.css" />
+    <EmbeddedResource Include="Migrations\201705142010494_AddedUserRoles.resx">
+      <DependentUpon>201705142010494_AddedUserRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705142012370_AddedUsersWithRolesForTsting.resx">
+      <DependentUpon>201705142012370_AddedUsersWithRolesForTsting.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

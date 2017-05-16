@@ -50,16 +50,9 @@
             @Html.DisplayFor(model => model.BoughtOnDate)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Time)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Time)
-        </dd>
-
     </dl>
 </div>
 <p>
-      @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

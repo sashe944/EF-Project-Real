@@ -8,28 +8,32 @@ using System.Web;
 using System.Web.Mvc;
 using OnlineSmartPhoneShop_DbContext;
 using OnlineSmartPhoneShop_Entities.Models;
+using OnlineSmartphonesShop.DTO_s;
 using PagedList;
 
 namespace OnlineSmartphonesShop.Controllers
 {
+    [Authorize]
     public class SmartphonesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Smartphones
-        public ActionResult Index(string searchString, string currentFilter,int ? page, string sortOrder)
+        public ActionResult Index(string sortOrder,string currentFilter, string searchString, int? page)
         {
-            if (searchString != null)
-            {
-                page = 1;
-            }
-            else
-            {
-                searchString = currentFilter;
-            }
-            ViewBag.CurrentFilter = searchString;
+            ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            if (searchString != null)
+            {
+
+                page = 1;
+            }
+            else { searchString = currentFilter;
+
+            }
+
+            ViewBag.CurrentFilter = searchString;
 
             var smartphones = from s in db.Smartphones select s;
             switch (sortOrder)
@@ -38,7 +42,7 @@ namespace OnlineSmartphonesShop.Controllers
                     smartphones = smartphones.OrderByDescending(s => s.Name);
                     break;
                 case "Date":
-                    smartphones = smartphones.OrderBy(s => s.BoughtOnDate);
+                    smartphones= smartphones.OrderBy(s => s.BoughtOnDate);
                     break;
                 case "date_desc":
                     smartphones = smartphones.OrderByDescending(s => s.BoughtOnDate);
@@ -47,6 +51,7 @@ namespace OnlineSmartphonesShop.Controllers
                     smartphones = smartphones.OrderBy(s => s.Name);
                     break;
             }
+
             int pageSize = 3;
             int pageNumber = (page ?? 1);
             return View(smartphones.ToPagedList(pageNumber, pageSize));
@@ -78,16 +83,25 @@ namespace OnlineSmartphonesShop.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Price,ImgURL,Description,BoughtOnDate,Time")] Smartphone smartphone)
+        public ActionResult Create(SmartphoneEntry entry)
         {
             if (ModelState.IsValid)
             {
+                DateTime Date = DateTime.Parse(string.Format($"{entry.Date} {entry.Time}"));
+                Smartphone smartphone = new Smartphone
+                    (
+                    entry.Name,
+                    entry.Price,
+                    entry.ImgURL,
+                    entry.Description,
+                    DateTime.Now
+                    );
                 db.Smartphones.Add(smartphone);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(smartphone);
+            return View(entry);
         }
 
         // GET: Smartphones/Edit/5
@@ -110,7 +124,7 @@ namespace OnlineSmartphonesShop.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Price,ImgURL,Description,BoughtOnDate,Time")] Smartphone smartphone)
+        public ActionResult Edit([Bind(Include = "Id,Name,Price,ImgURL,Description,BoughtOnDate")] Smartphone smartphone)
         {
             if (ModelState.IsValid)
             {

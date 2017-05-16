@@ -198,6 +198,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SmartphonesController.cs" />
+    <Compile Include="DTO%27s\SmartphoneEntry.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -379,6 +380,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OnlineSmartPhoneShop_CommonFiles\OnlineSmartPhoneShop_CommonFiles.csproj">
+      <Project>{3CD496BB-DABA-4372-AADA-BBDF2DAB4D3A}</Project>
+      <Name>OnlineSmartPhoneShop_CommonFiles</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OnlineSmartPhoneShop_DbContext\OnlineSmartPhoneShop_DbContext.csproj">
       <Project>{17A9A76D-67F9-4826-A591-08B0C26F978E}</Project>
       <Name>OnlineSmartPhoneShop_DbContext</Name>

@@ -18,16 +18,14 @@ namespace OnlineSmartPhoneShop_Entities.Models
            string imgUrl,
            string description,
            DateTime boughtOnDate,
-           TimeSpan time,
            CustomId id = null)
+            :this(id)
         {
-            this.Id = id;
+            this.Name = name;
             this.Price = price;
             this.ImgURL = imgUrl;
             this.Description = description;
             this.BoughtOnDate = boughtOnDate;
-            this.Time = time;
-
         }
         public Smartphone(CustomId id)
         {
@@ -50,8 +48,5 @@ namespace OnlineSmartPhoneShop_Entities.Models
 
         [Required]
         public DateTime BoughtOnDate { get; set; }
-
-        [Required]
-        public TimeSpan Time { get; set; }
     }
 }

@@ -3,7 +3,7 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddRoleForUsers : DbMigration
+    public partial class AddedUserRoles : DbMigration
     {
         public override void Up()
         {
@@ -35,10 +35,10 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        Name = c.String(nullable: false),
-                        Price = c.String(nullable: false),
-                        ImgURL = c.String(nullable: false),
-                        Description = c.String(nullable: false),
+                        Name = c.String(),
+                        Price = c.String(),
+                        ImgURL = c.String(),
+                        Description = c.String(),
                         BoughtOnDate = c.DateTime(nullable: false),
                         Time = c.Time(nullable: false, precision: 7),
                     })
