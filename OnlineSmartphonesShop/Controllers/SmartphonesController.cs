@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using OnlineSmartPhoneShop_DbContext;
 using OnlineSmartPhoneShop_Entities.Models;
@@ -36,7 +34,11 @@ namespace OnlineSmartphonesShop.Controllers
             ViewBag.CurrentFilter = searchString;
 
             var smartphones = from s in db.Smartphones select s;
-            switch (sortOrder)
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                smartphones = smartphones.Where(s => s.Name.ToUpper().Contains(searchString.ToUpper()));
+            }
+                switch (sortOrder)
             {
                 case "name_desc":
                     smartphones = smartphones.OrderByDescending(s => s.Name);
@@ -87,14 +89,13 @@ namespace OnlineSmartphonesShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                DateTime Date = DateTime.Parse(string.Format($"{entry.Date} {entry.Time}"));
                 Smartphone smartphone = new Smartphone
                     (
                     entry.Name,
                     entry.Price,
                     entry.ImgURL,
                     entry.Description,
-                    DateTime.Now
+                    entry.GetDate()
                     );
                 db.Smartphones.Add(smartphone);
                 db.SaveChanges();

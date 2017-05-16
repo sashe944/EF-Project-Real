@@ -1,4 +1,6 @@
 ﻿
+using OnlineSmartPhoneShop_CommonFiles.Attributes;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace OnlineSmartphonesShop.DTO_s
@@ -23,7 +25,13 @@ namespace OnlineSmartphonesShop.DTO_s
         public string Date { get; set; }
 
         [Required]
+        [ValidTime]
         [StringLength(50)]
         public string Time { get; set; }
+
+        public DateTime GetDate()
+        {
+            return DateTime.Parse(string.Format($"{this.Date} {this.Time}"));
+        }
     }
 }

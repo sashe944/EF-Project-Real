@@ -84,4 +84,11 @@
                 }*@
         </dd>
     </dl>
+    <hr />
+    <div>
+        @if (User.IsInRole("Owner"))
+        {
+        @Html.ActionLink("Manage Smartphones", "Index", "Smartphones", routeValues: null, htmlAttributes: new { title = "Manage" })
+        }
+    </div>
 </div>
