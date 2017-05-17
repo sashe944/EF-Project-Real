@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,6 +48,7 @@ namespace OnlineSmartPhoneShop_Entities.Models
         public string Description { get; set; }
 
         [Required]
+        [Column("ReleaseDate")]
         public DateTime BoughtOnDate { get; set; }
     }
 }

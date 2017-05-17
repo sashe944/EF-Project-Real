@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201705142012370_AddedUsersWithRolesForTsting.Designer.cs">
       <DependentUpon>201705142012370_AddedUsersWithRolesForTsting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705171106586_ChangedColumnNameBoughtOnDateToReleaseDate.cs" />
+    <Compile Include="Migrations\201705171106586_ChangedColumnNameBoughtOnDateToReleaseDate.Designer.cs">
+      <DependentUpon>201705171106586_ChangedColumnNameBoughtOnDateToReleaseDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Initializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705142012370_AddedUsersWithRolesForTsting.resx">
       <DependentUpon>201705142012370_AddedUsersWithRolesForTsting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705171106586_ChangedColumnNameBoughtOnDateToReleaseDate.resx">
+      <DependentUpon>201705171106586_ChangedColumnNameBoughtOnDateToReleaseDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
