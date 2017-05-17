@@ -20,9 +20,8 @@ namespace OnlineSmartphonesShop.DTO_s
         public string ImgURL { get; set; }
         [Required]
         public string Description { get; set; }
-       // [Required]
+        [Required]
         [StringLength(50)]
-
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString =
        "{0:yyyy-MM-dd}",
