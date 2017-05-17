@@ -22,6 +22,11 @@ namespace OnlineSmartphonesShop.DTO_s
         public string Description { get; set; }
        // [Required]
         [StringLength(50)]
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString =
+       "{0:yyyy-MM-dd}",
+        ApplyFormatInEditMode = true)]
         public string Date { get; set; }
 
         [Required]
