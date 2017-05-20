@@ -1190,24 +1190,28 @@ footer h4 {color:#fff;}
 /*-----------------------------------------------------------------------------------*/
 /* __________ Contact Form __________ */
 textarea,
-input[type="text"] {
-	width:280px;
-	margin:0 0 10px;
-	padding: 10px 8px;
-	text-transform:none;
-	font-family: 'Roboto', sans-serif;
-	font-weight:400;
-	line-height:20px;
-	font-size: 12px;
-	color: #333;
-	font-style:normal;
-	border-radius: 0;	
-	background: none;
-	border: 2px solid #242424;
-	box-shadow: none;
-	transition: border-color 0.3s ease-in-out; 
-	-webkit-transition: border-color 0.3s ease-in-out;
+input[type=text] {
+    width: 280px;
+    margin: 0 0 10px;
+    padding: 10px 8px;
+    text-transform: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 20px;
+    font-size: 12px;
+    color: #333;
+    font-style: normal;
+    border-radius: 0;
+    background: none;
+    border: 2px solid #242424;
+    box-shadow: none;
+    transition: border-color 0.3s ease-in-out;
+    -webkit-transition: border-color 0.3s ease-in-out;
 }
+
+    input[type=text]:hover{
+        width: 100%;
+    }
 textarea {
 	overflow:hidden;
 	min-height:95px;
@@ -1218,26 +1222,25 @@ input[type="text"].last {margin-right:0;
 }
 
 
-textarea:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus {
-	outline: 0;
-	box-shadow: none;
-	color:#666;
-	border-color:#ccc;
+
+    textarea:focus,
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="datetime"]:focus,
+    input[type="datetime-local"]:focus,
+    input[type="date"]:focus,
+    input[type="month"]:focus,
+    input[type="time"]:focus,
+    input[type="week"]:focus,
+    input[type="number"]:focus,
+    input[type="email"]:focus,
+    input[type="url"]:focus,
+    input[type="search"]:focus,
+    input[type="tel"]:focus,
+    input[type="color"]:focus {
+     
 }
+
 
 
 .contact_btn {
@@ -1384,13 +1387,16 @@ input[type="color"]:focus {
 	line-height:68px;
 	font-size:20px;
 	color:#999;
+    margin-bottom:10px;
 }
 .pagination li a:focus,
 .pagination li a:hover {
+     margin-bottom:10px;
 	background:none !important;
 	color:#333 !important;
 }
 .pagination li.active a {
+    margin-bottom:10px;
 	border:2px solid #333 !Important;
 	font-size:26px;
 	color:#333 !important;
@@ -2036,9 +2042,36 @@ input[type="color"]:focus {
 	.col-ss-1 {width: 8.333333333333332%;}
 
 }
+/*GROW*/
+.style_prevu_kit
+{
+    display:inline-block;
+    border:0;
+    width:196px;
+    height:210px;
+    position: relative;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);   
 
-
-
+}
+.style_prevu_kit:hover
+{ 
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
+}
 
 
 

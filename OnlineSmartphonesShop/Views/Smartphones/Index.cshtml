@@ -1,12 +1,38 @@
-﻿@model PagedList.IPagedList<OnlineSmartPhoneShop_Entities.Models.Smartphone>
+﻿<script src="@Url.Content("~/Content/")js/jquery.zoom.js" type="text/javascript"></script>
+<script src="@Url.Content("~/Content/")js/jquery.zoom.min.js" type="text/javascript"></script>
+<style>
+    input[type=text] {
+        width: 10px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background: url('https://www.w3schools.com/howto/searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 1.5s ease-in-out;
+        transition: width 1.5s ease-in-out;
+    }
+
+        input[type=text]:focus {
+            width: 100%;
+        }
+</style>
+
+@model PagedList.IPagedList<OnlineSmartPhoneShop_Entities.Models.Smartphone>
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>List of available phones  @if(User.IsInRole("Owner")){
-    @Html.ActionLink("- Add", "Create", "Smartphones", routeValues: null, htmlAttributes: new { title = "Manage" })
-}</h2>
+<span style="text-align:center;">
+        <h2>
+            List of available phones  @if(User.IsInRole("Owner")){
+              @Html.ActionLink("- Add", "Create", "Smartphones", routeValues: null, htmlAttributes: new { title = "Manage" })
+            }
+       </h2>
+    </span>
 
 <p>
     @if (User.IsInRole("Owner"))
@@ -14,57 +40,55 @@
         @Html.ActionLink("New Smartphone", "Create")
     }
 </p>
-@using (Html.BeginForm())
-{
-    <p>
-        @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { placeholder = "Search By Name" })
-        <input type="submit" value="Search" style="height: 45px;" />
-    </p>
-}
-
-<div class="row">
-    @foreach (var item in Model)
+   @using (Html.BeginForm())
     {
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-
-                @*@Html.DisplayFor(modelItem => item.Name)
-
-                    @Html.DisplayFor(modelItem => item.Price)*@
-
-                <img src="@item.ImgURL" alt="Smartphone image" style="width:40%; text-align:center;" />
-                <div class="caption">
-                    <h4>
-                        @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
-                        : @Html.DisplayFor(modelItem => item.Name) <br />
-                        Price: @Html.DisplayFor(modelItem => item.Price) <br />
-                        @*Description: @Html.DisplayFor(modelItem => item.Description)*@
-                        @Html.ActionLink("Date", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
-                        :@Html.DisplayFor(modelItem => item.BoughtOnDate)<br />
-                    </h4>
-                    <span>
-                    </span>
-                    <br />
-                    <span class="btn btn-default" role="button" style="width:100%;">
-                      @if (User.IsInRole("Owner"))
-                      {
-                         @Html.ActionLink("Details | ", "Details", new { id = item.Id })
-                         @Html.ActionLink("Edit | ", "Edit", new { id = item.Id })
-                         @Html.ActionLink("Delete ", "Delete", new { id = item.Id })
-                      }
-                        @if (User.IsInRole("Guest"))
-                        {
-                            @Html.ActionLink("Details | ", "Details", new { id = item.Id })
-                            @Html.ActionLink("Buy ", "", "BuySmartphones")
-                        }
-                       
-                    </span>
-                </div> 
-            </div>
-        </div>
+        <p>
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new {@placeholder = "Search By Name..." })
+        </p>
     }
-</div>
-<br />
+
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-7 col-md-4">
+                <div class="thumbnail" style="text-align: center;">
+
+                  <div class="style_prevu_kit">
+                    <img src="@item.ImgURL" alt="Smartphone image" style="width:100%;" />
+                   </div>
+
+                    <div class="caption">
+                        <h4>
+                            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                            : @Html.DisplayFor(modelItem => item.Name) <br />
+                            Price: @Html.DisplayFor(modelItem => item.Price) <br />
+                            @Html.ActionLink("Date", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+                            :@Html.DisplayFor(modelItem => item.BoughtOnDate)<br />
+                        </h4>
+                        <span>
+                        </span>
+                        <br />
+                        <span class="btn btn-default" role="button" style="width:100%; background-color:#ffffff;">
+                            @if (User.IsInRole("Owner"))
+                            {
+                                @Html.ActionLink("Details | ", "Details", new { id = item.Id })
+                                @Html.ActionLink("Edit | ", "Edit", new { id = item.Id })
+                                @Html.ActionLink("Delete ", "Delete", new { id = item.Id })
+                            }
+                            @if (User.IsInRole("Guest"))
+                            {
+                                @Html.ActionLink("Details | ", "Details", new { id = item.Id })
+                                @Html.ActionLink("Buy ", "", "BuySmartphones")
+                            }
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <br />
     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of
     @Model.PageCount
 
