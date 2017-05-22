@@ -10,8 +10,10 @@ namespace OnlineSmartPhoneShop_DbContext
         public ApplicationDbContext()
             : base("OnlineShopConnection", throwIfV1Schema: false)
             //: base("OnlineShopConnection-Prod", throwIfV1Schema: false)
+
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         public static ApplicationDbContext Create()

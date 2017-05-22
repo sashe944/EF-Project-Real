@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Smartphone</h4>
+    <h4>Smartphone Details</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -31,7 +31,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ImgURL)
+          <img src="@Html.DisplayFor(model => model.ImgURL)" alt="img" style="width:15%;"/>
         </dd>
         <hr />
         <dt>
@@ -53,5 +53,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Buy ", "Buy", "BuySmartphones")
 </p>

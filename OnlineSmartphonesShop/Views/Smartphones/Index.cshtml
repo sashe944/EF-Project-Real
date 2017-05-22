@@ -72,20 +72,19 @@
                         <span class="btn btn-default" role="button" style="width:100%; background-color:#ffffff;">
                             @if (User.IsInRole("Owner"))
                             {
-                                @Html.ActionLink("Details | ", "Details", new { id = item.Id })
-                                @Html.ActionLink("Edit | ", "Edit", new { id = item.Id })
+                                @Html.ActionLink("Details | ", "Details", new { id = item.Id }) 
+                                @Html.ActionLink("Edit | ", "Edit", new { id = item.Id }) 
                                 @Html.ActionLink("Delete ", "Delete", new { id = item.Id })
                             }
                             @if (User.IsInRole("Guest"))
                             {
-                                @Html.ActionLink("Details | ", "Details", new { id = item.Id })
-                                @Html.ActionLink("Buy ", "", "BuySmartphones")
+                                @Html.ActionLink("Details ", "Details", new { id = item.Id })
                             }
 
                         </span>
                     </div>
                 </div>
-            </div>
+            </div> 
         }
     </div>
     <br />

@@ -53,7 +53,6 @@ namespace OnlineSmartphonesShop.Controllers
                     smartphones = smartphones.OrderBy(s => s.Name);
                     break;
             }
-
             int pageSize = 3;
             int pageNumber = (page ?? 1);
             return View(smartphones.ToPagedList(pageNumber, pageSize));
@@ -71,6 +70,11 @@ namespace OnlineSmartphonesShop.Controllers
             {
                 return HttpNotFound();
             }
+                TempData["smartphoneId"] = smartphone.Id;
+                TempData["smartphoneImage"] = smartphone.ImgURL;
+                TempData["smartphoneName"] = smartphone.Name;
+                TempData["smartphonePrice"] = smartphone.Price;
+
             return View(smartphone);
         }
 
@@ -99,6 +103,7 @@ namespace OnlineSmartphonesShop.Controllers
                     );
                 db.Smartphones.Add(smartphone);
                 db.SaveChanges();
+               
                 return RedirectToAction("Index");
             }
 
@@ -162,13 +167,13 @@ namespace OnlineSmartphonesShop.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 }
