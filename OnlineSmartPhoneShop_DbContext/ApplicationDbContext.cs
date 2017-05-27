@@ -8,12 +8,12 @@ namespace OnlineSmartPhoneShop_DbContext
     public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext()
-            : base("OnlineShopConnection", throwIfV1Schema: false)
-            //: base("OnlineShopConnection-Prod", throwIfV1Schema: false)
+            //: base("OnlineShopConnection", throwIfV1Schema: false)
+            : base("OnlineShopConnection-Prod", throwIfV1Schema: false)
 
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
-            this.Configuration.LazyLoadingEnabled = false;
+           Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
+           // this.Configuration.LazyLoadingEnabled = false;
         }
 
         public static ApplicationDbContext Create()
@@ -21,6 +21,6 @@ namespace OnlineSmartPhoneShop_DbContext
             return new ApplicationDbContext();
         }
 
-        public DbSet<OnlineSmartPhoneShop_Entities.Models.Smartphone> Smartphones { get; set; }
+       
     }
 }

@@ -61,17 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201705142010494_AddedUserRoles.cs" />
-    <Compile Include="Migrations\201705142010494_AddedUserRoles.Designer.cs">
-      <DependentUpon>201705142010494_AddedUserRoles.cs</DependentUpon>
+    <Compile Include="Migrations\201705271428098_AddedUserRoles.cs" />
+    <Compile Include="Migrations\201705271428098_AddedUserRoles.Designer.cs">
+      <DependentUpon>201705271428098_AddedUserRoles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705142012370_AddedUsersWithRolesForTsting.cs" />
-    <Compile Include="Migrations\201705142012370_AddedUsersWithRolesForTsting.Designer.cs">
-      <DependentUpon>201705142012370_AddedUsersWithRolesForTsting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705171106586_ChangedColumnNameBoughtOnDateToReleaseDate.cs" />
-    <Compile Include="Migrations\201705171106586_ChangedColumnNameBoughtOnDateToReleaseDate.Designer.cs">
-      <DependentUpon>201705171106586_ChangedColumnNameBoughtOnDateToReleaseDate.cs</DependentUpon>
+    <Compile Include="Migrations\201705271438462_AddedUsersWithRolesForTesting.cs" />
+    <Compile Include="Migrations\201705271438462_AddedUsersWithRolesForTesting.Designer.cs">
+      <DependentUpon>201705271438462_AddedUsersWithRolesForTesting.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Initializer.cs" />
@@ -95,14 +91,11 @@
     <Content Include="Content\PagedList.css" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705142010494_AddedUserRoles.resx">
-      <DependentUpon>201705142010494_AddedUserRoles.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705271428098_AddedUserRoles.resx">
+      <DependentUpon>201705271428098_AddedUserRoles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705142012370_AddedUsersWithRolesForTsting.resx">
-      <DependentUpon>201705142012370_AddedUsersWithRolesForTsting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705171106586_ChangedColumnNameBoughtOnDateToReleaseDate.resx">
-      <DependentUpon>201705171106586_ChangedColumnNameBoughtOnDateToReleaseDate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705271438462_AddedUsersWithRolesForTesting.resx">
+      <DependentUpon>201705271438462_AddedUsersWithRolesForTesting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

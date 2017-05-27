@@ -9,8 +9,17 @@ namespace OnlineSmartphonesShop.Controllers
     public class BuySmartphonesController : Controller
     {
         // GET: BuySmartphones
-        public ActionResult Buy()
+        public ActionResult Buy(string txtCount)
         {
+            ViewBag.Count = txtCount;
+            Session["Count"] = txtCount;
+            return View();
+        }
+        public ActionResult Order(string returnedCount)
+        {
+            returnedCount = Session["Count"].ToString();
+            String DevicePrice = Session["smartphonePrice"].ToString();
+            ViewBag.TotalPrice = DevicePrice + " X "  + returnedCount;
             return View();
         }
     }

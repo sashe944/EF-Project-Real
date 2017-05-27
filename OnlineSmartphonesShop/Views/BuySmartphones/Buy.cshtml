@@ -1,4 +1,13 @@
-﻿
+﻿<style>
+    input[type=text] {
+        width: 30px !important;
+        padding: 0px;
+        text-align:center;
+        border: 1px solid #333;
+    }
+       
+</style>
+
 @{
     ViewBag.Title = "Buy";
 }
@@ -17,6 +26,7 @@
                             <th>ID</th>
                             <th>Image</th>
                             <th>Name</th>
+                            <th>Count</th>
                             <th>Price</th>
                         </tr>
                     </thead>
@@ -24,39 +34,52 @@
                                 <tr>
                                     <td>
                                         <div>   
-                                            @if(TempData["smartphoneId"] != null)
+                                            @if(Session["smartphoneId"] != null)
                                             {
-                                                <h5>@TempData["smartphoneId"]</h5>
+                                                <h5>@Session["smartphoneId"]</h5>
                                             }
                                         </div>
                                     </td>
                                     <td>
                                             <div>
-                                                @if (TempData["smartphoneImage"] != null)
+                                                @if (Session["smartphoneImage"] != null)
                                                 {
-                                                    <h5><img src="@TempData["smartphoneImage"]" style="width:10%;"/></h5>
+                                                    <h5><img src="@Session["smartphoneImage"]" style="width:10%;"/></h5>
                                                 }
                                             </div>      
                                     </td>
                                     <td>
                                         <div>
-                                            @if (TempData["smartphoneName"] != null)
+                                            @if (Session["smartphoneName"] != null)
                                             {
-                                                <h5>@TempData["smartphoneName"]</h5>
+                                                <h5>@Session["smartphoneName"]</h5>
                                             }
                                         </div>
                                     </td>
                                     <td>
                                         <div>
-                                            @if (TempData["smartphonePrice"] != null)
+                                          @using (Html.BeginForm("Buy","BuySmartphones",FormMethod.Post))
+                                          {
+                                            @Html.TextBox("txtCount")
+                                          }
+                                            @ViewBag.Count
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            @if (Session["smartphonePrice"] != null)
                                             {
-                                                <h5>@TempData["smartphonePrice"]</h5>
+                                                <h5>@Session["smartphonePrice"]</h5>
                                             }
                                         </div>
                                     </td>
                                 </tr>
                         </tbody>
                 </table>
+                <br />
+                <span class="btn btn-default" role="button" style="width:100%; background-color:#ffffff;">
+                    @Html.ActionLink("Order Now", "Order", "BuySmartphones")
+                </span>
             </div>
         </div>
     </div>

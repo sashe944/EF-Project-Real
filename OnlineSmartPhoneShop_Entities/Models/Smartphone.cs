@@ -18,7 +18,7 @@ namespace OnlineSmartPhoneShop_Entities.Models
            string price,
            string imgUrl,
            string description,
-           DateTime boughtOnDate,
+           DateTime releaseDate,
            CustomId id = null)
             :this(id)
         {
@@ -26,7 +26,7 @@ namespace OnlineSmartPhoneShop_Entities.Models
             this.Price = price;
             this.ImgURL = imgUrl;
             this.Description = description;
-            this.BoughtOnDate = boughtOnDate;
+            this.ReleaseDate = releaseDate;
         }
         public Smartphone(CustomId id)
         {
@@ -35,20 +35,19 @@ namespace OnlineSmartPhoneShop_Entities.Models
         [Key]
         public string Id { get; set; }
 
-        [Required]
+        //[Required]
         public string Name { get; set; }
 
-        [Required]
+        //[Required]
         public string Price { get; set; }
 
-        [Required]
+        //[Required]
         public string ImgURL { get; set; }
 
-        [Required]
+       // [Required]
         public string Description { get; set; }
 
-        [Required]
-        [Column("ReleaseDate")]
-        public DateTime BoughtOnDate { get; set; }
+       // [Required]
+        public DateTime ReleaseDate { get; set; }
     }
 }
