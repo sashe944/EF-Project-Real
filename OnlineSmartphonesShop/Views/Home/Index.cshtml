@@ -163,7 +163,10 @@
                             Connectivity
                             3.5 mm stereo audio jack
                         </p>
+                        @if (User.IsInRole("Guest"))
+                        {
                         <a style="padding: 20px;"class="btn btn-active" href="@Url.Action("Index", "Smartphones")"><span data-hover="Yes I want ">Byu Smart Phone</span></a>
+                        }
                     </div>
 
                     <div class="col-lg-5 col-md-5 col-sm-5 ipad_img_in" data-appear-top-offset="-200" data-animated="fadeInRight">
