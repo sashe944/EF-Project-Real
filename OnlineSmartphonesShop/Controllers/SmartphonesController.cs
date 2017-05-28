@@ -9,9 +9,11 @@ using System.Web.Mvc;
 using OnlineSmartPhoneShop_DbContext;
 using OnlineSmartPhoneShop_Entities.Models;
 using PagedList;
+using OnlineSmartphonesShop.DTO_s;
 
 namespace OnlineSmartphonesShop.Controllers
 {
+    [Authorize]
     public class SmartphonesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -86,16 +88,23 @@ namespace OnlineSmartphonesShop.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Price,ImgURL,Description,ReleaseDate")] Smartphone smartphone)
+        public ActionResult Create(SmartphoneEntry entry)
         {
             if (ModelState.IsValid)
             {
+                Smartphone smartphone = new Smartphone(entry.Name,
+                    entry.Price,
+                    entry.ImgURL,
+                    entry.Description,
+                    entry.GetDate(),
+                    null);
+
                 db.Smartphones.Add(smartphone);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(smartphone);
+            return View(entry);
         }
 
         // GET: Smartphones/Edit/5

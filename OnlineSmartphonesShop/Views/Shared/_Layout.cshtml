@@ -113,21 +113,23 @@
                         </div><!-- //MENU -->
                     </div><!-- //MENU BLOCK -->
                 </div><!-- //CONTAINER -->
-            </header><!-- //HEADER -->
+            </header><!-- //HEADER -->   
+      
+            <div>
+                @RenderBody()
+            </div>
 
-           
             <footer>
                 <div>
                     <p style="text-align:center; ">&copy; Site by Alexander Indzhov. All right Reserved! </p>
                 </div>
                 <div>
-                   
+
                 </div>
-            </footer> @*//FOOTER*@ 
-      
-            <div>
-                @RenderBody()
-            </div>
+            </footer> @*//FOOTER*@
+
+
+            
 
            
             @RenderSection("scripts", required: false)
