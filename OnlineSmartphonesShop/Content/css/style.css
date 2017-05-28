@@ -1208,10 +1208,6 @@ input[type=text] {
     transition: border-color 0.3s ease-in-out;
     -webkit-transition: border-color 0.3s ease-in-out;
 }
-
-    input[type=text]:hover{
-        width: 100%;
-    }
 textarea {
 	overflow:hidden;
 	min-height:95px;
