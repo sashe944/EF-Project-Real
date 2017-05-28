@@ -1,4 +1,9 @@
-﻿
+﻿<style>
+    input[type="text"]{
+        border:2px solid #242424;
+    }
+</style>
+
 @{
     ViewBag.Title = "Order";
 }
@@ -17,19 +22,23 @@
                     <div style="margin-top:5px;">
                         @Html.Label("Name")
                     </div>
-                    @Html.TextBox("Name") <br />
-
-
+                    
+                      @Html.TextBox("Name") <br />
+                   
                     <div style="margin-bottom:5px;">
                         @Html.Label("Family")
                     </div>
-                    @Html.TextBox("Family") <br />
+                    
+                        @Html.TextBox("Family") <br />
+                    
 
 
                     <div style="margin-top:5px;">
                         @Html.Label("Adress")
                     </div>
-                    @Html.TextBox("Adress")<br />
+                    
+                        @Html.TextBox("Adress")<br />
+                   
 
                     <input type="submit" value="Order" class="btn btn-default" />
                 </div>

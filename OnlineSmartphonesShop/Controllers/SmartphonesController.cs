@@ -74,6 +74,11 @@ namespace OnlineSmartphonesShop.Controllers
             {
                 return HttpNotFound();
             }
+            Session["smartphoneId"] = smartphone.Id;
+            Session["smartphoneName"] = smartphone.Name;
+            Session["smartphoneImage"] = smartphone.ImgURL;
+            Session["smartphonePrice"] = smartphone.Price;
+
             return View(smartphone);
         }
 
