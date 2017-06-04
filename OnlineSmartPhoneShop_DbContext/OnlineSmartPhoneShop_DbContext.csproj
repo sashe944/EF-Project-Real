@@ -61,13 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201705272044000_AddedUserRoles.cs" />
-    <Compile Include="Migrations\201705272044000_AddedUserRoles.Designer.cs">
-      <DependentUpon>201705272044000_AddedUserRoles.cs</DependentUpon>
+    <Compile Include="Migrations\201706031432558_AddedUserRoles.cs" />
+    <Compile Include="Migrations\201706031432558_AddedUserRoles.Designer.cs">
+      <DependentUpon>201706031432558_AddedUserRoles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705272046222_AddedUsersWithRolesForTestingPurposes.cs" />
-    <Compile Include="Migrations\201705272046222_AddedUsersWithRolesForTestingPurposes.Designer.cs">
-      <DependentUpon>201705272046222_AddedUsersWithRolesForTestingPurposes.cs</DependentUpon>
+    <Compile Include="Migrations\201706031435274_AddedUsersWithRolesForTesting.cs" />
+    <Compile Include="Migrations\201706031435274_AddedUsersWithRolesForTesting.Designer.cs">
+      <DependentUpon>201706031435274_AddedUsersWithRolesForTesting.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Initializer.cs" />
@@ -91,11 +91,11 @@
     <Content Include="Content\PagedList.css" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705272044000_AddedUserRoles.resx">
-      <DependentUpon>201705272044000_AddedUserRoles.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706031432558_AddedUserRoles.resx">
+      <DependentUpon>201706031432558_AddedUserRoles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705272046222_AddedUsersWithRolesForTestingPurposes.resx">
-      <DependentUpon>201705272046222_AddedUsersWithRolesForTestingPurposes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706031435274_AddedUsersWithRolesForTesting.resx">
+      <DependentUpon>201706031435274_AddedUsersWithRolesForTesting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

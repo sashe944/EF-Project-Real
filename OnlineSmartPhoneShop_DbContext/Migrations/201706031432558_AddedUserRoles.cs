@@ -8,6 +8,18 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.Orders",
+                c => new
+                    {
+                        OrderID = c.Int(nullable: false, identity: true),
+                        PhoneId = c.String(),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        Address = c.String(),
+                    })
+                .PrimaryKey(t => t.OrderID);
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -108,6 +120,7 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
             DropTable("dbo.Smartphones");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Orders");
         }
     }
 }

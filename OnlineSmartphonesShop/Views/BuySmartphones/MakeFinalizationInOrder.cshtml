@@ -1,0 +1,69 @@
+﻿@model OnlineSmartPhoneShop_Entities.Models.Order
+
+<style>
+    input[type="text"] {
+        border: 2px solid #242424;
+    }
+</style>
+
+@{
+    ViewBag.Title = "Order";
+}
+
+<div style="text-align:center;">
+    <h2>Order Details</h2>
+</div>
+<hr />
+<div style="text-align:center;">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <h2>Pleace fill this form to proseed with the order</h2>
+        <div style="text-align:center;">
+            <div style="text-align:center;">
+                
+                <div style="margin-bottom:5px;">
+                    @Html.Label("Smartphone ID")
+                </div>
+
+                @Html.TextBox("smartphoneId",(string)ViewBag.smartphoneId) <br />
+
+               
+                <div style="margin-bottom:5px;">
+                    @Html.Label("First Name")
+                </div>
+
+                @Html.TextBoxFor(x=>x.FirstName) <br />
+
+
+
+                <div style="margin-top:5px;">
+                    @Html.Label("Last Name")
+                </div>
+
+                @Html.TextBoxFor(x=>x.LastName)<br />
+
+                <div style="margin-top:5px;">
+                    @Html.Label("Shipping Address")
+                </div>
+
+                @Html.TextBoxFor(x => x.Address)<br />
+
+                <input type="submit" value="Order" class="btn btn-default" />
+            </div>
+        </div>
+    }
+    <br />
+    <h5>Total Product Price: @ViewBag.TotalPrice</h5>
+
+</div>
+
+
+
+
+
+
+
+
+

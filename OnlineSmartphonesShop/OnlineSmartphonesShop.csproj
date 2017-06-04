@@ -380,6 +380,7 @@
     <Content Include="Views\Smartphones\Details.cshtml" />
     <Content Include="Views\Smartphones\Edit.cshtml" />
     <Content Include="Views\Smartphones\Index.cshtml" />
+    <Content Include="Views\BuySmartphones\MakeFinalizationInOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
