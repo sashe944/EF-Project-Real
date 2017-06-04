@@ -12,7 +12,7 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
                 c => new
                     {
                         OrderID = c.Int(nullable: false, identity: true),
-                        PhoneId = c.String(),
+                        SmartphoneID = c.String(),
                         FirstName = c.String(),
                         LastName = c.String(),
                         Address = c.String(),

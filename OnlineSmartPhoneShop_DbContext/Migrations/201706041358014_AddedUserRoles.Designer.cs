@@ -13,7 +13,7 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201706031432558_AddedUserRoles"; }
+            get { return "201706041358014_AddedUserRoles"; }
         }
         
         string IMigrationMetadata.Source

@@ -12,8 +12,8 @@ namespace OnlineSmartPhoneShop_DbContext
         public virtual IDbSet<Order> Orders { get; set; }
 
         public ApplicationDbContext()
-            : base("OnlineShopConnection", throwIfV1Schema: false)
-           // : base("OnlineShopConnection-Prod", throwIfV1Schema: false)
+           // : base("OnlineShopConnection", throwIfV1Schema: false)
+            : base("OnlineShopConnection-Production", throwIfV1Schema: false)
 
         {
            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
