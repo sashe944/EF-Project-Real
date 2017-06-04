@@ -53,6 +53,13 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Back to List", "Index") |
-    @Html.ActionLink("Buy this phone ", "Buy", "BuySmartphones")
+    @if (User.IsInRole("Guest"))
+    {
+        <span class="btn btn-default" role="button" style="width:100%; background-color:#ffffff;">
+            @Html.ActionLink("Back to List", "Index")
+        </span>
+        <span class="btn btn-default" role="button" style="width:100%; background-color:#ffffff;">
+            @Html.ActionLink("Buy this phone ", "Buy", "BuySmartphones")
+        </span>
+            }
 </p>
