@@ -35,19 +35,19 @@ namespace OnlineSmartPhoneShop_Entities.Models
         [Key]
         public string Id { get; set; }
 
-        //[Required]
+        [Required]
         public string Name { get; set; }
 
-        //[Required]
+        [Required]
         public string Price { get; set; }
-
-        //[Required]
+    
+        [Required]
         public string ImgURL { get; set; }
 
-       // [Required]
+        [Required]
         public string Description { get; set; }
 
-       // [Required]
+        [Required]
         public DateTime ReleaseDate { get; set; }
     }
 }

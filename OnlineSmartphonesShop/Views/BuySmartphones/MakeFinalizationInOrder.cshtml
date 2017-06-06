@@ -5,6 +5,7 @@
         border: 2px solid #242424;
     }
 </style>
+<script src="~/Content/js/jquery.min.js"></script>
 
 @{
     ViewBag.Title = "Order";
@@ -32,9 +33,8 @@
                
                 <div style="margin-bottom:5px;">
                     @Html.Label("First Name")
-                </div>
-
-                @Html.TextBoxFor(x=>x.FirstName) <br />
+                </div>  
+                @Html.TextBoxFor(x=>x.FirstName, new { @placeholder = "Enter First Name" }) <br />
 
 
 
@@ -42,15 +42,27 @@
                     @Html.Label("Last Name")
                 </div>
 
-                @Html.TextBoxFor(x=>x.LastName)<br />
+                @Html.TextBoxFor(x=>x.LastName, new { @placeholder = "Enter Last Name" })<br />
+
+                <div style="margin-top:5px;">
+                    @Html.Label("Email Address")
+                </div>
+
+                @Html.TextBoxFor(x => x.EmailAddress, new { @placeholder = "Enter Email Adress" })<br />
 
                 <div style="margin-top:5px;">
                     @Html.Label("Shipping Address")
                 </div>
 
-                @Html.TextBoxFor(x => x.Address)<br />
+                @Html.TextBoxFor(x => x.ShipAddress,new {@placeholder="Enter Shipping Adress" })<br />
 
-                <input type="submit" value="Order" class="btn btn-default" />
+                <input type="submit" value="Order" class="btn btn-default" onclick="question()" />
+                <script>
+                    function question() {
+                        alert("Are you sure you want to buy this product ?");
+                    }
+                </script>
+               
             </div>
         </div>
     }

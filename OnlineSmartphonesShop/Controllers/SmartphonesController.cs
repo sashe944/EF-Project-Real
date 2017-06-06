@@ -17,6 +17,7 @@ namespace OnlineSmartphonesShop.Controllers
     public class SmartphonesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        
 
         // GET: Smartphones
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
@@ -24,23 +25,23 @@ namespace OnlineSmartphonesShop.Controllers
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
-            if (searchString != null)
+             if (searchString != null)
             {
 
                 page = 1;
             }
             else
-            {
-                searchString = currentFilter;
+             {
+             searchString = currentFilter;
 
-            }
+              }
 
-            ViewBag.CurrentFilter = searchString;
+             ViewBag.CurrentFilter = searchString;
 
             var smartphones = from s in db.Smartphones select s;
-            if (!String.IsNullOrEmpty(searchString))
+             if (!String.IsNullOrEmpty(searchString))
             {
-                smartphones = smartphones.Where(s => s.Name.ToUpper().Contains(searchString.ToUpper()));
+                 smartphones = smartphones.Where(s => s.Name.ToUpper().Contains(searchString.ToUpper()));
             }
             switch (sortOrder)
             {
