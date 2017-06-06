@@ -12,13 +12,13 @@ namespace OnlineSmartPhoneShop_Entities.Models
     {
         public int OrderID { get; set; }
         public string SmartphoneID { get; set; }
-       
+        [Required]
         public string FirstName { get; set; }
-       
+        [Required]
         public string LastName { get; set; }
-       
+        [Required]
         public string EmailAddress { get; set; }
-
+        [Required]
         public string ShipAddress { get; set; }
 
         Smartphone smartphone = new Smartphone();
@@ -42,6 +42,7 @@ namespace OnlineSmartPhoneShop_Entities.Models
             {
                 throw ex;
             }
+
         }
     }
 }

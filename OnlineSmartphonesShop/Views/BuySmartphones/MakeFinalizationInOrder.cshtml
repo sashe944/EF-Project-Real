@@ -33,9 +33,10 @@
                
                 <div style="margin-bottom:5px;">
                     @Html.Label("First Name")
-                </div>  
+                </div> 
                 @Html.TextBoxFor(x=>x.FirstName, new { @placeholder = "Enter First Name" }) <br />
-
+               @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+                
 
 
                 <div style="margin-top:5px;">
@@ -43,23 +44,27 @@
                 </div>
 
                 @Html.TextBoxFor(x=>x.LastName, new { @placeholder = "Enter Last Name" })<br />
+                @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
 
                 <div style="margin-top:5px;">
                     @Html.Label("Email Address")
                 </div>
 
                 @Html.TextBoxFor(x => x.EmailAddress, new { @placeholder = "Enter Email Adress" })<br />
+                @Html.ValidationMessageFor(x => x.EmailAddress, "", new { @class = "text-danger" })
 
                 <div style="margin-top:5px;">
                     @Html.Label("Shipping Address")
                 </div>
 
                 @Html.TextBoxFor(x => x.ShipAddress,new {@placeholder="Enter Shipping Adress" })<br />
-
+                @Html.ValidationMessageFor(x => x.ShipAddress, "", new { @class = "text-danger" })
+                <br />
                 <input type="submit" value="Order" class="btn btn-default" onclick="question()" />
                 <script>
+                   
                     function question() {
-                        alert("Are you sure you want to buy this product ?");
+                        alert("Are you sure you want to buy this product ?")
                     }
                 </script>
                

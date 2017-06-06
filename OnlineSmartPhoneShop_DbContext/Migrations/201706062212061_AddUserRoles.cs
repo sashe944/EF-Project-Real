@@ -3,7 +3,7 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddedUserRoles : DbMigration
+    public partial class AddUserRoles : DbMigration
     {
         public override void Up()
         {
@@ -13,9 +13,10 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
                     {
                         OrderID = c.Int(nullable: false, identity: true),
                         SmartphoneID = c.String(),
-                        FirstName = c.String(),
-                        LastName = c.String(),
-                        Address = c.String(),
+                        FirstName = c.String(nullable: false),
+                        LastName = c.String(nullable: false),
+                        EmailAddress = c.String(nullable: false),
+                        ShipAddress = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.OrderID);
             
@@ -47,10 +48,10 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        Name = c.String(),
-                        Price = c.String(),
-                        ImgURL = c.String(),
-                        Description = c.String(),
+                        Name = c.String(nullable: false),
+                        Price = c.String(nullable: false),
+                        ImgURL = c.String(nullable: false),
+                        Description = c.String(nullable: false),
                         ReleaseDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);

@@ -7,13 +7,13 @@ namespace OnlineSmartPhoneShop_DbContext.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class AddedUserRoles : IMigrationMetadata
+    public sealed partial class AddUserRolesForTesting : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedUserRoles));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddUserRolesForTesting));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706041358014_AddedUserRoles"; }
+            get { return "201706062213072_AddUserRolesForTesting"; }
         }
         
         string IMigrationMetadata.Source

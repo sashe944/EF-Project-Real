@@ -61,13 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201706041358014_AddedUserRoles.cs" />
-    <Compile Include="Migrations\201706041358014_AddedUserRoles.Designer.cs">
-      <DependentUpon>201706041358014_AddedUserRoles.cs</DependentUpon>
+    <Compile Include="Migrations\201706062212061_AddUserRoles.cs" />
+    <Compile Include="Migrations\201706062212061_AddUserRoles.Designer.cs">
+      <DependentUpon>201706062212061_AddUserRoles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706041359105_AddedUserRolesForTesting.cs" />
-    <Compile Include="Migrations\201706041359105_AddedUserRolesForTesting.Designer.cs">
-      <DependentUpon>201706041359105_AddedUserRolesForTesting.cs</DependentUpon>
+    <Compile Include="Migrations\201706062213072_AddUserRolesForTesting.cs" />
+    <Compile Include="Migrations\201706062213072_AddUserRolesForTesting.Designer.cs">
+      <DependentUpon>201706062213072_AddUserRolesForTesting.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Initializer.cs" />
@@ -91,11 +91,11 @@
     <Content Include="Content\PagedList.css" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706041358014_AddedUserRoles.resx">
-      <DependentUpon>201706041358014_AddedUserRoles.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706062212061_AddUserRoles.resx">
+      <DependentUpon>201706062212061_AddUserRoles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706041359105_AddedUserRolesForTesting.resx">
-      <DependentUpon>201706041359105_AddedUserRolesForTesting.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706062213072_AddUserRolesForTesting.resx">
+      <DependentUpon>201706062213072_AddUserRolesForTesting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
