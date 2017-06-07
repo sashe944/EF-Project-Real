@@ -28,7 +28,7 @@
                     @Html.Label("Smartphone ID")
                 </div>
 
-                @Html.TextBox("smartphoneId",(string)ViewBag.smartphoneId) <br />
+                @Html.TextBox("smartphoneId",(string)ViewBag.smartphoneId,new { @readonly = "readonly" }) <br />
 
                
                 <div style="margin-bottom:5px;">
@@ -50,7 +50,7 @@
                     @Html.Label("Email Address")
                 </div>
 
-                @Html.TextBoxFor(x => x.EmailAddress, new { @placeholder = "Enter Email Adress" })<br />
+                @Html.TextBoxFor(x => x.EmailAddress, new { @placeholder = "Enter Email Adress" })<br />  
                 @Html.ValidationMessageFor(x => x.EmailAddress, "", new { @class = "text-danger" })
 
                 <div style="margin-top:5px;">
@@ -61,12 +61,14 @@
                 @Html.ValidationMessageFor(x => x.ShipAddress, "", new { @class = "text-danger" })
                 <br />
                 <input type="submit" value="Order" class="btn btn-default" onclick="question()" />
+
                 <script>
                    
                     function question() {
                         alert("Are you sure you want to buy this product ?")
                     }
                 </script>
+
                
             </div>
         </div>

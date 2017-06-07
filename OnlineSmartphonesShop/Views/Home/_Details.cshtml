@@ -1,0 +1,62 @@
+﻿@model OnlineSmartPhoneShop_Entities.Models.Smartphone
+
+@{
+    ViewBag.Title = "Details";
+}
+<div>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <h4 class="modal-title" id="myModalLabel">Smartphone Details</h4>
+    </div>
+
+    <div>
+        <h4>Smartphone Details</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name) :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <hr />
+            <dt>
+                @Html.DisplayNameFor(model => model.Price) :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <hr />
+            <dt>
+                @Html.DisplayNameFor(model => model.ImgURL) :
+            </dt>
+
+            <dd>
+                <img src="@Html.DisplayFor(model => model.ImgURL)" alt="img" style="width:15%;" />
+            </dd>
+            <hr />
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.Description) :
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+            <hr />*@
+            <dt>
+                @Html.DisplayNameFor(model => model.ReleaseDate) :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ReleaseDate)
+            </dd>
+            <hr />
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Back to List", "Index") |
+        @Html.ActionLink("Buy this phone ", "Buy", "BuySmartphones")
+    </p>
+</div>

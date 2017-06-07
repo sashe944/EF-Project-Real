@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Postal;
 
 namespace OnlineSmartphonesShop.Controllers
 {
@@ -19,31 +20,31 @@ namespace OnlineSmartphonesShop.Controllers
             Session["Count"] = txtCount;
             return View();
         }
-        //public ActionResult Order(string returnedCount)
-        //{
-        //    returnedCount = Session["Count"].ToString();
-        //    String DevicePrice = Session["smartphonePrice"].ToString();
-        //    ViewBag.TotalPrice = DevicePrice + " X "  + returnedCount;
-        //    return View();
-        //}
+     
         public ActionResult MakeFinalizationInOrder(string returnedCount)
         {
             returnedCount = Session["Count"].ToString();
             String DevicePrice = Session["smartphonePrice"].ToString();
             ViewBag.TotalPrice = DevicePrice + " X " + returnedCount;
             ViewBag.smartphoneId = Session["smartphoneId"];
+
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult MakeFinalizationInOrder(Order order)
+        public ActionResult MakeFinalizationInOrder(Order order,string emailAddress)
         {
+            emailAddress = order.EmailAddress;
             try
             {
                 if (ModelState.IsValid)
                 {
                     db.Orders.Add(order);
                     db.SaveChanges();
+                    dynamic email = new Email("Example");
+                    email.To = emailAddress;
+                    email.Message = "Order has been made successfuly!";
+                    email.Send();
                     return RedirectToAction("Buy");
                 }
             }

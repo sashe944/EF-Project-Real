@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using OnlineSmartPhoneShop_CommonFiles;
+
 
 namespace OnlineSmartPhoneShop_Entities.Models
 {
@@ -25,9 +23,9 @@ namespace OnlineSmartPhoneShop_Entities.Models
         SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=OnlineShop-Dev;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
 
-        
         public string OrderPhone(Order order)
         {
+
             order.SmartphoneID = smartphone.Id.ToString();
             cmd.CommandText = "Insert into Orders values('" + order.OrderID + "','" + order.SmartphoneID + "','" + order.FirstName + "','" + order.LastName + "','" +order.EmailAddress + "', '" + order.ShipAddress + "')";
             cmd.Connection = conn;
@@ -43,6 +41,9 @@ namespace OnlineSmartPhoneShop_Entities.Models
                 throw ex;
             }
 
+
         }
+        
     }
+  
 }
