@@ -41,11 +41,11 @@ namespace OnlineSmartphonesShop.Controllers
                 {
                     db.Orders.Add(order);
                     db.SaveChanges();
-                    dynamic email = new Email("Example");
-                    email.To = emailAddress;
-                    email.Message = "Order has been made successfuly!";
-                    email.Send();
-                    return RedirectToAction("Buy");
+                    //dynamic email = new Email("Example");
+                    //email.To = emailAddress;
+                    //email.Message = "Order has been made successfuly!";
+                    //email.Send();
+                    //return RedirectToAction("Buy");
                 }
             }
             catch (DataException dex)
