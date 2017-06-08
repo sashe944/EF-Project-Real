@@ -380,7 +380,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\BuySmartphones\Buy.cshtml" />
-    <Content Include="Views\BuySmartphones\Order.cshtml" />
     <Content Include="Views\Smartphones\Create.cshtml" />
     <Content Include="Views\Smartphones\Delete.cshtml" />
     <Content Include="Views\Smartphones\Details.cshtml" />
