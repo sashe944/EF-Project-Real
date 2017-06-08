@@ -90,7 +90,7 @@
 
                         <!-- LOGO -->
                         <div class="logo pull-left">
-                            <a href="#">
+                            <a href="@Url.Action("Index", "Home")">
                                 <span class="b1">s</span>
                                 <span class="b2">m</span>
                                 <span class="b3">a</span>
@@ -106,7 +106,6 @@
                         <div class="pull-right">
                             <nav class="navmenu center">
                                 <ul>
-                                    <li class="first active scroll_btn">@Html.ActionLink("Home", "Index", "Home")</li>
                                     @Html.Partial("_LoginPartial")
                                 </ul>
                             </nav>

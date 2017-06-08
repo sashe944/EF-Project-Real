@@ -32,9 +32,10 @@ namespace OnlineSmartphonesShop.Controllers
             }
             else
              {
-             searchString = currentFilter;
 
-              }
+               searchString = currentFilter;
+
+             }
 
              ViewBag.CurrentFilter = searchString;
 

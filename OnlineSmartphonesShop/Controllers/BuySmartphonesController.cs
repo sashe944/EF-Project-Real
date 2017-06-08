@@ -34,7 +34,7 @@ namespace OnlineSmartphonesShop.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult MakeFinalizationInOrder(Order order,string emailAddress)
         {
-            emailAddress = order.EmailAddress;
+            //emailAddress = order.EmailAddress;
             try
             {
                 if (ModelState.IsValid)
