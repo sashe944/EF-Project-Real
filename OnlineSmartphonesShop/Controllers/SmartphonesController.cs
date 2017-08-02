@@ -17,10 +17,10 @@ namespace OnlineSmartphonesShop.Controllers
     public class SmartphonesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        
+
 
         // GET: Smartphones
-        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
+            public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -63,6 +63,14 @@ namespace OnlineSmartphonesShop.Controllers
             int pageNumber = (page ?? 1);
             return View(smartphones.ToPagedList(pageNumber, pageSize));
         }
+
+        public JsonResult Getsmartphones(string term)
+        {
+            List<string> neededSmartphones;
+
+            neededSmartphones = db.Smartphones.Where(x => x.Name.StartsWith(term)).Select(y => y.Name).ToList();
+            return Json(neededSmartphones, JsonRequestBehavior.AllowGet);
+        } 
 
         // GET: Smartphones/Details/5
         public ActionResult Details(string id)
