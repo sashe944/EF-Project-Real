@@ -9,6 +9,7 @@
 <div>
     <h4>Smartphone Details</h4>
     <hr />
+   
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Name) :
@@ -56,9 +57,7 @@
     @if (User.IsInRole("Guest"))
     {
         <span class="btn btn-default" role="button" style="width:100%; background-color:#ffffff;">
-            @Html.ActionLink("Back to List", "Index")
-        </span>
-        <span class="btn btn-default" role="button" style="width:100%; background-color:#ffffff;">
+            @Html.ActionLink("Back to List", "Index") |
             @Html.ActionLink("Buy this phone ", "Buy", "BuySmartphones")
         </span>
             }

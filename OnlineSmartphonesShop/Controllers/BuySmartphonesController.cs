@@ -26,7 +26,8 @@ namespace OnlineSmartphonesShop.Controllers
             returnedCount = Session["Count"].ToString();
             String DevicePrice = Session["smartphonePrice"].ToString();
             ViewBag.TotalPrice = DevicePrice + " X " + returnedCount;
-            ViewBag.smartphoneId = Session["smartphoneId"];
+            ViewBag.smartphoneName = Session["smartphoneName"];
+            
 
             return View();
         }

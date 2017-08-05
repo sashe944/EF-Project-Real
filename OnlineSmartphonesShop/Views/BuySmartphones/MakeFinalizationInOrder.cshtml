@@ -28,12 +28,13 @@
                     @Html.Label("Smartphone ID")
                 </div>
 
-                @Html.TextBox("smartphoneId",(string)ViewBag.smartphoneId,new { @readonly = "readonly" }) <br />
+                @Html.TextBox("smartphoneName",(string)ViewBag.smartphoneName,new { @readonly = "readonly" }) <br />
 
                
                 <div style="margin-bottom:5px;">
                     @Html.Label("First Name")
                 </div> 
+
                 @Html.TextBoxFor(x=>x.FirstName, new { @placeholder = "Enter First Name" }) <br />
                @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
                 
@@ -65,7 +66,7 @@
                 <script>
                    
                     function question() {
-                        alert("Are you sure you want to buy this product ?")
+                        alert("Confirmation","Are you sure you want to buy this product ?")
                     }
                 </script>
 

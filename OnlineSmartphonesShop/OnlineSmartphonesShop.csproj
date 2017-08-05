@@ -230,6 +230,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\js\bootbox.min.js" />
     <Content Include="Content\js\bootstrap.min.css" />
     <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\bootstrap.min.css" />
@@ -312,6 +313,7 @@
     <Content Include="Content\images\zoom_h.png" />
     <Content Include="Content\js\animate.js" />
     <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\bPopup.js" />
     <Content Include="Content\js\jquery.BlackAndWhite.js" />
     <Content Include="Content\js\jquery.flexslider-min.js" />
     <Content Include="Content\js\jquery.min.js" />
@@ -374,10 +376,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <None Include="Scripts\jquery-1.12.4.intellisense.js" />
-    <Content Include="Scripts\jquery-1.12.4.js" />
-    <Content Include="Scripts\jquery-1.12.4.min.js" />
-    <Content Include="Scripts\jquery-1.12.4.min.map" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
@@ -435,6 +440,7 @@
     <Content Include="Views\Emails\Web.config" />
     <Content Include="Views\Emails\Example.cshtml" />
     <Content Include="Views\BuySmartphones\SendEmail.cshtml" />
+    <Content Include="Views\Smartphones\_Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

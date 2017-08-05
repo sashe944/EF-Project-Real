@@ -10,6 +10,7 @@ using OnlineSmartPhoneShop_DbContext;
 using OnlineSmartPhoneShop_Entities.Models;
 using PagedList;
 using OnlineSmartphonesShop.DTO_s;
+using OnlineSmartphonesShop.Models;
 
 namespace OnlineSmartphonesShop.Controllers
 {
@@ -18,9 +19,9 @@ namespace OnlineSmartphonesShop.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-
+        
         // GET: Smartphones
-            public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -63,23 +64,31 @@ namespace OnlineSmartphonesShop.Controllers
             int pageNumber = (page ?? 1);
             return View(smartphones.ToPagedList(pageNumber, pageSize));
         }
-
         public JsonResult Getsmartphones(string term)
         {
             List<string> neededSmartphones;
 
             neededSmartphones = db.Smartphones.Where(x => x.Name.StartsWith(term)).Select(y => y.Name).ToList();
             return Json(neededSmartphones, JsonRequestBehavior.AllowGet);
-        } 
-
+        }
+        public ActionResult ViewLyubomir()
+        {
+            return PartialView("_Lyubomir");
+        }
+        [HttpPost]
+        public ActionResult Lyubomir()
+        {
+            return RedirectToAction("Index");
+        }
         // GET: Smartphones/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+           }
             Smartphone smartphone = db.Smartphones.Find(id);
+            LoginViewModel model = new LoginViewModel();
             if (smartphone == null)
             {
                 return HttpNotFound();
@@ -89,7 +98,15 @@ namespace OnlineSmartphonesShop.Controllers
             Session["smartphoneImage"] = smartphone.ImgURL;
             Session["smartphonePrice"] = smartphone.Price;
 
-            return View(smartphone);
+            if (User.IsInRole("Guest"))
+            {
+                
+                return PartialView("_Details", smartphone);
+            }
+            else
+            {
+                return View(smartphone);
+            }          
         }
 
         // GET: Smartphones/Create
@@ -178,7 +195,7 @@ namespace OnlineSmartphonesShop.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+  
         protected override void Dispose(bool disposing)
         {
             if (disposing)
